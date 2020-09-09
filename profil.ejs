@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% 
+    let data = {
+        name : 'Jane',
+        batch : '17,2',
+        email : 'janedoe@gmail.com'
+    }
+    %>
+    <div>
+        <span>NAMA : </span><span><%= data.name %></span>
+        <form action="/edit/<%= data.name %>" method="post">
+        <input type="submit" value="edit nama">
+    </div>
+    <div>
+        <span>BATCH : </span><span><%= data.batch %></span>
+        <form action="/edit/<%= data.batch %>" method="post">
+        <input type="submit" value="edit batch">
+    </div>
+    <div>
+        <span>EMAIL : </span><span><%= data.email %></span>
+        <form action="/edit/<%= data.email %>" method="post">
+        <input type="submit" value="edit email">
+    </div>
+</body>
+</html>

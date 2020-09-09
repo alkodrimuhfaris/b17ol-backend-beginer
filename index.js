@@ -31,10 +31,26 @@ app.get("/main", (req,res)=>{
 
 //nomor 3
 app.post('/data', (req, res)=>{
-    let name = req.body.data;
-    //console.log("post :", name);
+    let name = req.body.name;
+    console.log("post :", name);
     res.send(name);
 })
+
+app.get('/profile', (req, res)=> {
+    res.render(path.join(__dirname, 'profil.ejs'));
+})
+
+//nomor 4
+app.route('/profile', (req, res)=>{
+    res.send('Get a random book')
+  })
+  .post('/edit/:item', (req, res)=>{
+    let itemnya = req.param.ubah;
+    res.render('berhasil mendapatkan itemnya :', itemnya)
+  })
+  .put((req, res)=> {
+    res.send('Update the book')
+  })
 
 
 app.listen(3000,()=>{
